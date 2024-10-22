@@ -1,0 +1,107 @@
+/* Estilo general */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcce6;
+}
+
+.bg-pink {
+    background-color: #ffcce6;
+}
+
+.text-pink {
+    color: #ff3399;
+}
+
+.btn-pink {
+    background-color: #ff99cc;
+    border-color: #ff99cc;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #ff6699;
+    border-color: #ff6699;
+}
+
+.btn-outline-pink {
+    color: #ff6699;
+    border-color: #ff6699;
+}
+
+.btn-outline-pink:hover {
+    background-color: #ff99cc;
+    color: white;
+}
+
+
+
+/* Estilos para la barra de búsqueda alineada a la derecha y más larga */
+.search-bar {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search-input {
+    width: 400px; /* Campo de búsqueda más largo */
+    font-size: 1.1rem;
+}
+
+/* Estilos del botón del carrito */
+.cart-link img {
+    margin-right: 5px;
+}
+
+/* Selector de cantidad */
+.quantity-selector {
+    width: 120px;
+}
+
+input[type="text"] {
+    width: 50px;
+    text-align: center;
+}
+
+/* Imagen del Rogel más grande */
+.rogel-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+
+
+/* Botón de agregar */
+.btn-lg {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+/* Clase personalizada para margen entre elementos */
+.nav-item {
+    margin-right: 90px; /* Ajusta el valor según sea necesario */
+}
+
+/* styles.css */
+#notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+}
+
+.cart-link {
+    margin-right: 20px; /* Ajusta el valor según sea necesario */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
