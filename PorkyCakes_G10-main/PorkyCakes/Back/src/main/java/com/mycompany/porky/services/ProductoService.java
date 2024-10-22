@@ -5,9 +5,12 @@
 
  package com.mycompany.porky.services;
 
- import static spark.Spark.*;
+ import com.mycompany.porky.controllers.PController;
 
-import com.mycompany.porky.controllers.PController;
+import static spark.Spark.before;
+import static spark.Spark.get;
+import static spark.Spark.options;
+import static spark.Spark.post;
  
  public class ProductoService {
      public static void main(String[] args) {
@@ -35,6 +38,7 @@ import com.mycompany.porky.controllers.PController;
          });
  
          post("/addProduct", PController.add);
+         get("/getPBase", PController.getPBase); // Ruta para obtener productos base
  
      }
  }

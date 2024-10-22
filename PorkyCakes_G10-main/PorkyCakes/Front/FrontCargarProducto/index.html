@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Añadir Producto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Añadir Producto</h1>
+        <form id="productForm">
+            <label for="nombre_product">Nombre del Producto:</label>
+            <input type="text" id="nombre_product" required>
+
+         
+            <div id="tamañosPrecios">
+                <div>
+                    <label for="precio_chico">Precio Chico:</label>
+                    <input type="number" id="precio_chico" placeholder="Precio Chico">
+                    <input type="number" id="tamaño_chico" placeholder="Tamaño Chico (cm)">
+                    <div class="checkbox-container">
+                        <label>
+                            <input type="checkbox" id="check_chico"> Presione el checkbox si desea cargar
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="precio_mediano">Precio Mediano:</label>
+                    <input type="number" id="precio_mediano" placeholder="Precio Mediano">
+                    <input type="number" id="tamaño_mediano" placeholder="Tamaño Mediano (cm)">
+                    <div class="checkbox-container">
+                        <label>
+                            <input type="checkbox" id="check_mediano"> Presione el checkbox si desea cargar
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="precio_grande">Precio Grande:</label>
+                    <input type="number" id="precio_grande" placeholder="Precio Grande">
+                    <input type="number" id="tamaño_grande" placeholder="Tamaño Grande (cm)">
+                    <div class="checkbox-container">
+                        <label>
+                            <input type="checkbox" id="check_grande"> Presione el checkbox si desea cargar
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <label for="descripcion_product">Descripción:</label>
+            <input type="text" id="descripcion_product" required>
+
+            <label for="id_pbase">Producto Base:</label>
+            <select id="id_pbase">
+                <option value="none">Ninguno</option>
+            </select>
+
+            <label for="imagen_url">URL de Imagen:</label>
+            <input type="text" id="imagen_url" required>
+
+            <button type="submit">Agregar Producto</button>
+        </form>
+
+        <div id="responseMessage"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

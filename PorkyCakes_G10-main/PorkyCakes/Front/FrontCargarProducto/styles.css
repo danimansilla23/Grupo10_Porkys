@@ -1,0 +1,81 @@
+body {
+    background-color: #fce4ec; /* Rosa suave */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Blanco */
+    border: 1px solid #d1c4e9; /* Gris claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #d81b60; /* Rosa fuerte */
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #4a4a4a; /* Gris oscuro */
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1c4e9; /* Gris claro */
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Ocultar las flechas de los inputs de tipo number */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Ocultar las flechas de los inputs de tipo number en Webkit */
+    margin: 0; /* Sin margen */
+}
+
+button {
+    background-color: #d81b60; /* Rosa fuerte */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #c2185b; /* Rosa más oscuro al pasar el mouse */
+}
+
+#responseMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #4caf50; /* Verde para mensajes de éxito */
+}
+
+/* Estilo para el checkbox */
+input[type="checkbox"] {
+    width: 20px; /* Aumenta el tamaño del checkbox */
+    height: 20px; /* Aumenta la altura del checkbox */
+    margin-left: 10px; /* Espaciado a la izquierda del checkbox */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+/* Centrar el checkbox en la misma línea */
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+

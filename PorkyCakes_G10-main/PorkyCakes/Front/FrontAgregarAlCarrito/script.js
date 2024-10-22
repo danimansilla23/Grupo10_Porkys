@@ -32,13 +32,13 @@ $(document).ready(function () {
         let price; 
 
         if (selectedSize === 'grande') {
-            idProducto = 9;
+            idProducto = 16;
             price = 3500; // Precio por unidad
         } else if (selectedSize === 'mediana') {
-            idProducto = 7;
+            idProducto = 18;
             price = 1500; // Precio por unidad
         } else if (selectedSize === 'chica') {
-            idProducto = 8;
+            idProducto = 17;
             price = 1000; // Precio por unidad
         }
 

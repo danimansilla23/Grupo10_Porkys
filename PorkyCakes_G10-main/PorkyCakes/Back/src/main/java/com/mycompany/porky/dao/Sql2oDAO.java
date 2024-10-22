@@ -8,7 +8,7 @@ public class Sql2oDAO {
 
     public static Sql2o getSql2o() {
         if (sql2o == null) {
-            sql2o = new Sql2o("jdbc:mysql://localhost:3306/Porky", "root",
+            sql2o = new Sql2o("jdbc:mysql://localhost:3306/Porkycakes", "root",
                     "");
         }
         return sql2o;
