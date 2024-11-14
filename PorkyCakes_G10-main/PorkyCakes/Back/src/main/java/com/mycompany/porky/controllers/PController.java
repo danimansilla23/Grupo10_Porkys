@@ -1,8 +1,13 @@
 package com.mycompany.porky.controllers;
 
+import java.util.List;
+
 import com.google.gson.Gson;
+import com.mycompany.porky.dao.PBaseDAOImpl;
+import com.mycompany.porky.dao.PBaseDao;
 import com.mycompany.porky.dao.PDAOImpl;
 import com.mycompany.porky.dao.PDao;
+import com.mycompany.porky.models.PBase;
 import com.mycompany.porky.models.Product;
 
 import spark.Request;
@@ -11,6 +16,7 @@ import spark.Route;
 
 public class PController {
     private final static PDao PDao = new PDAOImpl(); 
+    private static PBaseDao pBaseDao = new PBaseDAOImpl(); // Nuevo DAO para productos base
 
     public static Route add = (Request request, Response response) -> {
         response.type("application/json");
@@ -53,6 +59,17 @@ public class PController {
         }
     };
     
+    public static Route getPBase = (Request request, Response response) -> {
+        response.type("application/json");
+
+        try {
+            List<PBase> productosBase = pBaseDao.getAll(); // Método para obtener todos los productos base
+            return new Gson().toJson(productosBase);
+        } catch (Exception e) {
+            response.status(500);
+            return new Gson().toJson("Error al obtener productos base: " + e.getMessage());
+        }
+    };
 
 
 }

@@ -11,7 +11,7 @@ public class PBase {
     public PBase(Integer idProductosBase, String Nombre_Base, String descripcion) {
         this.idProductosBase = idProductosBase;
         this.Nombre_Base = Nombre_Base; // Cambiar a Nombre_Base
-        this.Descripcion = Descripcion;
+        this.Descripcion = descripcion;
     }
 }
 
