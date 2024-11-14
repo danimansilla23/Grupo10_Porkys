@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porky Cakes - Rogel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="iconoporky.png" type="image/png">
+</head>
+
+<body>
+    <header class="bg-pink p-3 d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <img src="iconoporky.png" alt="Porky Cakes Logo" id="logo">
+        </div>
+        <div class="search-bar d-flex ms-auto" style="flex-grow: 1;">
+            <input type="text" class="form-control me-2 search-input" placeholder="¿Qué estás buscando?"
+                style="flex-grow: 0; width: 20%;">
+            <button class="btn btn-light">Buscar</button>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">PRODUCTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SOLICITA TU PRESUPUESTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">NOSOTROS</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Mueve el botón de "Mi carrito" fuera del colapsable -->
+            <a href="#" class="btn btn-outline-pink cart-link">
+                <img src="carritoicono.png" alt="Carrito de compras" style="height: 30px;">
+                <span id="cart-count" class="badge bg-danger"
+                    style="position: absolute; top: -5px; right: 35px; display: none;">1</span>
+                Mi carrito
+            </a>
+        </div>
+    </nav>
+
+
+    <main class="container mt-5">
+        <section class="carrito-section rounded p-4 bg-white shadow-sm">
+            <!-- Enlace para volver atrás -->
+            <a href="#" class="back-link">
+                <span class="cart-title">&larr; Mi carrito</span>
+            </a>
+    
+            <!-- Aquí el script generará los productos del carrito -->
+            
+            <div class="products-section">
+                <!-- Los productos del carrito se insertarán aquí -->
+            </div>
+    
+            <!-- Sección para el total del carrito -->
+            <div class="total-section d-flex justify-content-between p-3 border-top mt-3">
+                <h5>Total:</h5>
+                <h5 id="total-amount">$0.00</h5> <!-- Se actualizará el total aquí -->
+            </div>
+    
+            <!-- Botón de confirmación de pedido -->
+            <button class="btn btn-pink w-100 mt-3" id="btn-reserva">Realizar Reserva</button>
+        </section>
+    </main>
+    
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -75,35 +75,9 @@ input[type="text"] {
     text-align: center;
 }
 
-/* Imagen del Rogel más grande */
-.rogel-img {
-    max-width: 100%;
-    height: auto;
-    max-height: 600px;
-    border-radius: 15%; /* Incrementa para hacer el redondeo más notable */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar la imagen */
-}
-
-
-
-
-/* Botón de agregar */
-.btn-lg {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-}
-
 /* Clase personalizada para margen entre elementos */
 .nav-item {
     margin-right: 90px; /* Ajusta el valor según sea necesario */
-}
-
-/* styles.css */
-#notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 11;
 }
 
 .cart-link {
@@ -130,77 +104,91 @@ input[type="text"] {
     background-color: #ffffff; /* Fondo blanco para que se vea limpio */
 }
 
-/* Estilo para el select */
-.form-select {
-    font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 10px; /* Bordes redondeados */
-    border: 1px solid #ff99cc; /* Color de borde */
-    background-color: #fff; /* Fondo blanco */
-    color: #ff3399; /* Color de texto */
-    appearance: none; /* Elimina la flecha predeterminada */
-    outline: none; /* Elimina el borde azul de enfoque */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: all 0.3s ease; /* Transición suave */
-}
 
-/* Cambiar el color del fondo y el borde al hacer hover */
-.form-select:hover {
-    border-color: #ff66b2; /* Borde más oscuro al pasar el mouse */
-    background-color: #ffe6f0; /* Fondo suave al hacer hover */
-}
+/* -------------------------------------------------------------------------------- */
 
-/* Efecto de enfoque cuando el select tiene el foco */
-.form-select:focus {
-    border-color: #ff3399; /* Borde más fuerte cuando está enfocado */
-    background-color: #fff; /* Fondo blanco al estar enfocado */
-    box-shadow: 0 0 5px rgba(255, 51, 153, 0.5); /* Sombra sutil para destacar */
-}
-
-/* Estilo del contenedor del select */
-.form-select-wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-/* Opcional: Agregar una flecha personalizada */
-.form-select-wrapper::after {
-    content: '▼'; /* Caracter de la flecha */
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ff3399; /* Color de la flecha */
-    font-size: 1.2rem;
-    pointer-events: none; /* Asegura que no bloquee el clic */
-}
-
-/* Estilo para las opciones */
-.form-select option {
-    padding: 10px;
+/* Estilos para la sección del carrito */
+.carrito-section {
     background-color: #fff;
+    padding: 30px; /* Aumenta el padding para que el contenido interno tenga más espacio */
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Aumenta el ancho máximo para que el contenedor sea más grande */
+    margin: auto;
+}
+
+
+.back-link {
+    font-size: 1.5rem;
+    color: #ff6699;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.cart-item {
+    background-color: #ffcce6;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.product-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.product-size {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #333;
 }
 
-/* Asegurar que el select se vea bien en dispositivos pequeños */
-@media (max-width: 768px) {
-    .form-select {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
+.total-section {
+    background-color: #ffcce6;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
 }
 
+.btn-pink {
+    background-color: #ff6699;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+}
 
+.btn-pink:hover {
+    background-color: #ff3399;
+}
 
+.btn-outline-danger {
+    color: #ff6699;
+    border-color: #ff6699;
+}
 
+.btn-outline-danger:hover {
+    background-color: #ff99cc;
+    color: white;
+}
 
-
-
-
-
-
-
-
-
-  
+.cart-title {
+    font-size: 2.0rem; /* Aumenta el tamaño de fuente solo para "Mi carrito" */
+    color: #ff6699;
+    font-weight: bold;
+}
