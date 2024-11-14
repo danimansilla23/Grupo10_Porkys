@@ -30,8 +30,10 @@ import com.mycompany.porky.controllers.CarritoController;
          });
  
          post("/carrito/:idCliente/",CarritoController.add);
+         get("/getcarrito/:idCliente/",CarritoController.view);
  
      }
  }
 
  //http://localhost:4567/carrito/4/?idProducto=4&cantidad=3&precio=300
+ //http://localhost:4567/getcarrito/1/

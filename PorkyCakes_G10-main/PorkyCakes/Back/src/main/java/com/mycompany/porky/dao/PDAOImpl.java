@@ -27,6 +27,30 @@ public class PDAOImpl implements PDao {
         }
     }
 
+    @Override
+    public Product getProductById(Integer idProducto) {
+        String selectSQL = "SELECT idProductos, Nombre_Producto, Precio_vta, tamaño, descripcion_producto, ProductosBase_idProductosBase, imagen_url " +
+                           "FROM productos WHERE idProductos = :idProducto";
+    
+        try (Connection con = sql2o.open()) {
+            return con.createQuery(selectSQL)
+                    .addParameter("idProducto", idProducto)
+                    .addColumnMapping("idProductos", "idproduct")  // Mapeo explícito para el ID
+                    .addColumnMapping("Nombre_Producto", "nombre_product")  // Mapeo explícito para el nombre
+                    .addColumnMapping("Precio_vta", "precio_vta")  // Mapeo explícito para el precio
+                    .addColumnMapping("tamaño", "tamaño")  // Mapeo explícito para el tamaño
+                    .addColumnMapping("descripcion_producto", "descripcion_product")  // Mapeo explícito para la descripción
+                    .addColumnMapping("ProductosBase_idProductosBase", "id_pbase")  // Mapeo explícito para el id_pbase
+                    .addColumnMapping("imagen_url", "imagen_url")  // Mapeo explícito para la URL de la imagen
+                    .executeAndFetchFirst(Product.class);  // Mapea a la clase Product
+        } catch (Exception e) {
+            System.err.println("Error al obtener producto: " + e.getMessage());
+            return null;
+        }
+    }
+    
+
+
     
 }
 
