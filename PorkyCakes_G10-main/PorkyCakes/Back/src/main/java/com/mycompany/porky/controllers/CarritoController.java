@@ -43,28 +43,35 @@ public class CarritoController {
 
             for (ProductoCarrito productoCarrito : productosCarrito) {
                 
-                Product product = PDao.getProductById(productoCarrito.getIdProducto());
-                if (product == null) {
+                String productoJson = PDao.getInfoProductById(productoCarrito.getIdProducto());
+            
+                if (productoJson == null) {
                     System.out.println("Producto no encontrado con ID: " + productoCarrito.getIdProducto());
+                    continue;
                 }
-
-                Map<String, Object> productoInfo = new HashMap<>();
-                productoInfo.put("idProducto", product.getIdproduct());
-                productoInfo.put("nombreProducto", product.getNombre_product());
-                productoInfo.put("precio", product.getPrecio_vta());
-                productoInfo.put("cantidad", productoCarrito.getCantidad());
-                productoInfo.put("tamaño", product.getTamaño() + " cm");
-
-                double subtotal = product.getPrecio_vta() * productoCarrito.getCantidad();
+            
+                
+                Gson gson = new Gson();
+                Map<String, Object> productoInfo = gson.fromJson(productoJson, Map.class);
+            
+                
+                int cantidad = productoCarrito.getCantidad();
+                productoInfo.put("cantidad", cantidad);
+            
+                
+                double subtotal = ((Number) productoInfo.get("precio")).doubleValue() * cantidad;
                 productoInfo.put("subtotal", subtotal);
-
+            
+                
                 productos.add(productoInfo);
-
+            
+                
                 total += subtotal;
             }
+            
 
             Map<String, Object> responseData = new HashMap<>();
-            responseData.put("idCarrito", carrito.getIdCarrito());
+            responseData.put("idCarrito", idCarrito);
             responseData.put("estado", carrito.getEstado());
             responseData.put("productos", productos);
             responseData.put("total", total);
