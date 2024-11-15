@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porky Cakes - Rogel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="iconoporky.png" type="image/png">
+</head>
+
+<body>
+    <header class="bg-pink p-3 d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <img src="iconoporky.png" alt="Porky Cakes Logo" id="logo">
+        </div>
+        <div class="search-bar d-flex ms-auto" style="flex-grow: 1;">
+            <input type="text" class="form-control me-2 search-input" placeholder="¿Qué estás buscando?"
+                style="flex-grow: 0; width: 20%;">
+            <button class="btn btn-light">Buscar</button>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">PRODUCTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SOLICITA TU PRESUPUESTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">NOSOTROS</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Mueve el botón de "Mi carrito" fuera del colapsable -->
+            <a href="#" class="btn btn-outline-pink cart-link">
+                <img src="carritoicono.png" alt="Carrito de compras" style="height: 30px;">
+                <span id="cart-count" class="badge bg-danger"
+                    style="position: absolute; top: -5px; right: 35px; display: none;">1</span>
+                Mi carrito
+            </a>
+        </div>
+    </nav>
+
+
+    <main class="container mt-5">
+        <div class="row">
+            <!-- Sección de Fecha y Horario de Entrega -->
+            <div class="col-lg-6 mb-4">
+                <h2 class="text-center text-pink">Entrega</h2>
+                <div class="form-group">
+                    <label for="fechaEntrega" class="text-pink">Fecha:</label>
+                    <input type="date" id="fechaEntrega" class="form-control" min="">
+                    <small class="text-muted">*Solo se aceptan pedidos con más de 72 horas de anticipación</small>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="horarioEntrega" class="text-pink">Horario:</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white">
+                            <img src="relojicono.png" alt="Ícono Reloj" style="height: 20px;">
+                        </span>
+                        <select id="horarioEntrega" class="form-select">
+                            <option value="" disabled selected>Seleccione un horario</option>
+                            <option value="7:00">7:00 A 8:00 HS</option>
+                            <option value="8:00">8:00 A 9:00 HS</option>
+                            <option value="9:00">9:00 A 10:00 HS</option>
+                            <option value="10:00">10:00 A 11:00 HS</option>
+                            <option value="11:00">11:00 A 11:30 HS</option>
+                            <option value="16:30">16:30 A 17:30 HS</option>
+                            <option value="17:30">17:30 A 18:30 HS</option>
+                            <option value="18:30">18:30 A 19:30 HS</option>
+                            <option value="19:30">19:30 A 20:30 HS</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Sección de Método de Pago -->
+            <div class="col-lg-6">
+                <h2 class="text-center text-pink">Formas de Pago</h2>
+                <div class="d-flex justify-content-around mt-3 flex-wrap">
+                    <button class="btn btn-outline-pink me-2 mb-2">Mercado Pago</button>
+                    <button class="btn btn-outline-pink me-2 mb-2">Transferencia</button>
+                    <button class="btn btn-outline-pink mb-2">Efectivo al momento de retiro</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Botón para confirmar la reserva -->
+        <div class="text-center mt-4">
+            <button class="btn btn-pink w-100 w-md-50">Reservar</button>
+        </div>
+    </main>
+    
+    
+    
+    
+    
+    
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

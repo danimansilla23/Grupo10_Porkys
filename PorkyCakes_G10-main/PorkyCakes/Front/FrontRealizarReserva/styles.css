@@ -1,0 +1,186 @@
+/* Estilo general */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcce6;
+}
+
+.bg-pink {
+    background-color: #ffcce6;
+}
+
+.text-pink {
+    color: #ff3399;
+}
+
+.btn-pink {
+    background-color: #ff99cc;
+    border-color: #ff99cc;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #ff6699;
+    border-color: #ff6699;
+}
+
+.btn-outline-pink {
+    color: #ff6699;
+    border-color: #ff6699;
+}
+
+.btn-outline-pink:hover {
+    background-color: #ff99cc;
+    color: white;
+}
+
+.navbar-light.bg-light {
+    background-color: #ff3399 !important; /* Cambia a rosado */
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff; /* Cambia el color del texto a un tono de rosa */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ff6699; /* Cambia el color al hacer hover */
+}
+
+
+
+/* Estilos para la barra de búsqueda alineada a la derecha y más larga */
+.search-bar {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search-input {
+    width: 400px; /* Campo de búsqueda más largo */
+    font-size: 1.1rem;
+}
+
+/* Estilos del botón del carrito */
+.cart-link img {
+    margin-right: 5px;
+}
+
+/* Selector de cantidad */
+.quantity-selector {
+    width: 120px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="text"] {
+    width: 50px;
+    text-align: center;
+}
+
+/* Clase personalizada para margen entre elementos */
+.nav-item {
+    margin-right: 90px; /* Ajusta el valor según sea necesario */
+}
+
+.cart-link {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #ff6699; /* Texto en tono rosado */
+    border: 1px solid #ff6699; /* Borde rosado */
+    padding: 5px 10px;
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 20px;
+}
+
+.cart-link:hover {
+    background-color: #ff99cc; /* Color de fondo rosado al hacer hover */
+    color: #ffffff; /* Texto blanco al hacer hover */
+}
+
+#logo {
+    height: 55px;
+    border-radius: 50%; /* Hace el icono circular */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    border: 2px solid #ff99cc; /* Borde rosado suave */
+    padding: 5px; /* Espacio entre el borde y la imagen */
+    background-color: #ffffff; /* Fondo blanco para que se vea limpio */
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Estilos para la sección de entrega y pago */
+/* Estilos para la sección de entrega y pago */
+main.container {
+    background-color: #ffe6f2;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2.text-pink {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-check-label {
+    color: #ff3399;
+}
+
+.form-check-input:checked {
+    background-color: #ff6699;
+    border-color: #ff6699;
+}
+
+button.btn-outline-pink {
+    width: 100%; /* Ancho completo en móviles */
+    max-width: 150px; /* Limita el ancho en pantallas grandes */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacio entre botones en móviles */
+}
+
+button.btn-pink {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Alineación para dispositivos grandes */
+@media (min-width: 992px) {
+    .btn-outline-pink {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Espaciado entre opciones de horario */
+.d-flex.flex-wrap .form-check {
+    margin-bottom: 10px;
+}
+
+/* Ajuste de tamaño del botón reservar en pantallas grandes */
+.w-md-50 {
+    max-width: 50%; /* Ancho del botón reducido en pantallas grandes */
+}
+
+.input-group-text {
+    background-color: #ffcce6; /* Color rosado para que combine */
+    border-color: #ff99cc;
+}
+
+.input-group-text img {
+    filter: grayscale(50%);
+}
+
+.form-select {
+    border-color: #ff99cc;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 5px #ff6699;
+    border-color: #ff6699;
+}
+
+
