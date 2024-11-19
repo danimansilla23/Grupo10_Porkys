@@ -54,8 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log("Respuesta de la API:", data); // Depurar respuesta del servidor
 
-                    mostrarModal("Reserva realizada con éxito.");
-            
+                mostrarModal("Reserva realizada con éxito.");
+
+                // Esperar unos segundos para que el usuario vea el modal, luego redirigir
+                setTimeout(() => {
+                    window.location.href = "../FrontAgregarAlCarrito/";
+                }, 2000); // Redirigir después de 2 segundos (puedes ajustar este tiempo)
+
             })
             .catch(error => {
                 console.error("Error al realizar la reserva:", error);
