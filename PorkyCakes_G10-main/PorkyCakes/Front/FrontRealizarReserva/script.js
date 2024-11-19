@@ -1,25 +1,78 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtener el elemento de fecha
     const fechaEntrega = document.getElementById("fechaEntrega");
+    const horarioEntrega = document.getElementById("horarioEntrega");
 
-    // Calcular la fecha mínima permitida (72 horas a partir de ahora)
+    // Configurar fecha mínima
     const hoy = new Date();
-    hoy.setHours(hoy.getHours() + 72); // Sumar 72 horas
-
-    // Formatear la fecha en formato YYYY-MM-DD
-    const year = hoy.getFullYear();
-    const month = (hoy.getMonth() + 1).toString().padStart(2, '0'); // Mes en formato de dos dígitos
-    const day = hoy.getDate().toString().padStart(2, '0'); // Día en formato de dos dígitos
-    const minFecha = `${year}-${month}-${day}`;
-
-    // Establecer la fecha mínima en el campo de fecha
+    hoy.setHours(hoy.getHours() + 72);
+    const minFecha = hoy.toISOString().split("T")[0];
     fechaEntrega.setAttribute("min", minFecha);
 
-    // Opcional: Validar que el usuario no seleccione una fecha anterior a la mínima permitida
-    fechaEntrega.addEventListener("input", function () {
-        if (fechaEntrega.value < minFecha) {
-            fechaEntrega.value = minFecha; // Restablecer a la fecha mínima si se selecciona una fecha inválida
-            alert("Por favor, selecciona una fecha con al menos 72 horas de anticipación.");
-        }
+    let formaDePago = 0; // Inicializamos la forma de pago como 0 (sin seleccionar)
+
+    // Manejar la selección de forma de pago
+    document.querySelectorAll('.btn-outline-pink').forEach(boton => {
+        boton.addEventListener('click', function () {
+            // Remover la clase 'active' de todos los botones
+            document.querySelectorAll('.btn-outline-pink').forEach(btn => btn.classList.remove('active'));
+
+            // Agregar la clase 'active' al botón seleccionado
+            boton.classList.add('active');
+
+            // Obtener el valor de forma de pago desde el atributo data-forma-pago
+            formaDePago = boton.getAttribute('data-forma-pago');
+        });
     });
+
+    // Botón de "Reservar"
+    document.querySelector(".btn-pink").addEventListener("click", function () {
+        const fecha = fechaEntrega.value;
+        const horario = horarioEntrega.value;
+
+        if (!fecha || !horario) {
+            mostrarModal("Por favor, completa todos los campos antes de continuar.");
+            return;
+        }
+
+        if (!formaDePago) {
+            mostrarModal("Por favor, selecciona una forma de pago.");
+            return;
+        }
+
+        // Generar la URL con parámetros separados para fecha y hora
+        const url = `http://localhost:4567/reserva/1/?fecha_entrega=${fecha}&hora_entrega=${horario}&forma_de_pago=${formaDePago}`;
+        console.log("URL generada:", url); // Depurar URL generada
+
+        // Enviar datos a la API
+        fetch(url, { method: "POST" })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Error en la reserva: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Respuesta de la API:", data); // Depurar respuesta del servidor
+
+                    mostrarModal("Reserva realizada con éxito.");
+            
+            })
+            .catch(error => {
+                console.error("Error al realizar la reserva:", error);
+                mostrarModal("Hubo un error al realizar la reserva. Por favor, verifica los datos o intenta más tarde.");
+            });
+    });
+
+    // Función para mostrar el modal
+    function mostrarModal(mensaje) {
+        const modalMensaje = document.getElementById("modalMensaje");
+        modalMensaje.textContent = mensaje;
+
+        const modalReserva = new bootstrap.Modal(document.getElementById("modalReserva"));
+        modalReserva.show();
+    }
 });
+
+
+
+

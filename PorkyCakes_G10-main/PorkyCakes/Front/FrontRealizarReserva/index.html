@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porky Cakes - Rogel</title>
+    <title>Porky Cakes - Reserva</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -43,7 +43,8 @@
                 </ul>
             </div>
             <!-- Mueve el botón de "Mi carrito" fuera del colapsable -->
-            <a href="http://localhost/Grupo10_Porkys-main/Grupo10_Porkys-main/PorkyCakes_G10-main/PorkyCakes/Front/FrontCarrito/carrito.html" class="btn btn-outline-pink cart-link">
+            <a href="http://localhost/Grupo10_Porkys-main/Grupo10_Porkys-main/PorkyCakes_G10-main/PorkyCakes/Front/FrontCarrito/carrito.html"
+                class="btn btn-outline-pink cart-link">
                 <img src="carritoicono.png" alt="Carrito de compras" style="height: 30px;">
                 <span id="cart-count" class="badge bg-danger"
                     style="position: absolute; top: -5px; right: 35px; display: none;">1</span>
@@ -71,9 +72,9 @@
                         </span>
                         <select id="horarioEntrega" class="form-select">
                             <option value="" disabled selected>Seleccione un horario</option>
-                            <option value="7:00">7:00 A 8:00 HS</option>
-                            <option value="8:00">8:00 A 9:00 HS</option>
-                            <option value="9:00">9:00 A 10:00 HS</option>
+                            <option value="07:00">7:00 A 8:00 HS</option>
+                            <option value="08:00">8:00 A 9:00 HS</option>
+                            <option value="09:00">9:00 A 10:00 HS</option>
                             <option value="10:00">10:00 A 11:00 HS</option>
                             <option value="11:00">11:00 A 11:30 HS</option>
                             <option value="16:30">16:30 A 17:30 HS</option>
@@ -84,31 +85,41 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Sección de Método de Pago -->
             <div class="col-lg-6">
                 <h2 class="text-center text-pink">Formas de Pago</h2>
                 <div class="d-flex justify-content-around mt-3 flex-wrap">
-                    <button class="btn btn-outline-pink me-2 mb-2">Mercado Pago</button>
-                    <button class="btn btn-outline-pink me-2 mb-2">Transferencia</button>
-                    <button class="btn btn-outline-pink mb-2">Efectivo al momento de retiro</button>
+                    <button class="btn btn-outline-pink me-2 mb-2" data-forma-pago="1">Mercado Pago</button>
+                    <button class="btn btn-outline-pink me-2 mb-2" data-forma-pago="2">Transferencia</button>
+                    <button class="btn btn-outline-pink mb-2" data-forma-pago="3">Efectivo al momento de retiro</button>
+                </div>                
+            </div>
+
+            <!-- Botón para confirmar la reserva -->
+            <div class="text-center mt-4">
+                <button class="btn btn-pink w-100 w-md-50">Reservar</button>
+            </div>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalReservaLabel">Estado de la Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mensaje del modal -->
+                    <p id="modalMensaje"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
-    
-        <!-- Botón para confirmar la reserva -->
-        <div class="text-center mt-4">
-            <button class="btn btn-pink w-100 w-md-50">Reservar</button>
-        </div>
-    </main>
-    
-    
-    
-    
-    
-    
-    
-
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
