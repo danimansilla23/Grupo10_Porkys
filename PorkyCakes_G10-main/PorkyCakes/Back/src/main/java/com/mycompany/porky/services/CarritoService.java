@@ -3,6 +3,7 @@
  import static spark.Spark.*;
 
 import com.mycompany.porky.controllers.CarritoController;
+import com.mycompany.porky.controllers.ReservaController;
  
  public class CarritoService {
      public static void main(String[] args) {
@@ -31,9 +32,12 @@ import com.mycompany.porky.controllers.CarritoController;
  
          post("/carrito/:idCliente/",CarritoController.add);
          get("/getcarrito/:idCliente/",CarritoController.view);
+
+         post("/reserva/:idCliente/",ReservaController.add);
  
      }
  }
 
  //http://localhost:4567/carrito/4/?idProducto=4&cantidad=3&precio=300
  //http://localhost:4567/getcarrito/1/
+ //http://localhost:4567/reserva/11/?fecha_entrega=2024-11-18 15:30&forma_de_pago=1 

@@ -11,6 +11,7 @@ public class Carrito {
     private Integer Estado;
     private Date Fecha_creacion;
     private Integer Clientes_idCliente;
+    private Integer Reservas_idReservas;
 
    public Carrito(Integer idCarrito, Integer IdCliente){
     this.idCarrito = idCarrito;
