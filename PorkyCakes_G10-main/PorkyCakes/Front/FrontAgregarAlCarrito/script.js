@@ -32,13 +32,13 @@ $(document).ready(function () {
     
         // Asignar ID y precio basado en el tamaño seleccionado
         if (selectedSize === 'grande') {
-            idProducto = 16;
+            idProducto = 7;
             price = 3500;
         } else if (selectedSize === 'mediana') {
-            idProducto = 18;
+            idProducto = 8;
             price = 1500;
         } else if (selectedSize === 'chica') {
-            idProducto = 17;
+            idProducto = 9;
             price = 1000;
         }
     
