@@ -24,17 +24,19 @@ public class ReservaController {
             Integer idClliente = Integer.valueOf(request.params(":idCliente"));
             String forma_de_pagoparam = request.queryParams("forma_de_pago");
             String fecha_entregaparam = request.queryParams("fecha_entrega");
+            String hora_entregaparam = request.queryParams("hora_entrega");
 
-            if (forma_de_pagoparam == null || fecha_entregaparam == null) {
+            if (forma_de_pagoparam == null || fecha_entregaparam == null || hora_entregaparam ==null ) {
                 response.status(400);
                 return new Gson().toJson("Error: Todos los parámetros son requeridos.");
             }
 
             Integer forma_de_pago = Integer.valueOf(forma_de_pagoparam);
-
+            String horayfecha_entrega = fecha_entregaparam + " " + hora_entregaparam; 
+            
             //String withTime = "2014-01-01 12:30";
             DateTimeFormatter formatterWithTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-            LocalDateTime fecha_entrega = LocalDateTime.parse(fecha_entregaparam, formatterWithTime);
+            LocalDateTime fecha_entrega = LocalDateTime.parse(horayfecha_entrega, formatterWithTime);
 
 
             Carrito carrito = CarritoDao.buscarCarrito(idClliente);
