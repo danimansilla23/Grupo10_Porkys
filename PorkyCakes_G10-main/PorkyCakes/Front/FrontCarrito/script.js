@@ -1,3 +1,5 @@
+
+
 // Selecciona la sección donde están los productos
 const carritoSection = document.querySelector('.carrito-section');
 const productsSection = document.querySelector('.products-section');
@@ -85,3 +87,4 @@ function eliminarProducto(idProducto, carritoData) {
 
 // Llamar a la función para obtener el carrito al cargar la página
 obtenerCarrito();
+
