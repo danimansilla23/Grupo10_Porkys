@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2024 a las 12:57:37
+-- Tiempo de generación: 20-11-2024 a las 13:50:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -58,7 +58,13 @@ INSERT INTO `carritos` (`idCarrito`, `Fecha_creacion`, `Clientes_idCliente`, `Re
 (25, '2024-11-19 15:17:07', 1, 27),
 (26, '2024-11-19 15:21:56', 1, 28),
 (27, '2024-11-20 08:41:04', 4, NULL),
-(28, '2024-11-20 08:41:18', 1, 29);
+(28, '2024-11-20 08:41:18', 1, 29),
+(29, '2024-11-20 09:38:49', 1, 30),
+(30, '2024-11-20 09:41:05', 1, 31),
+(31, '2024-11-20 09:41:42', 1, 32),
+(32, '2024-11-20 09:43:00', 1, 33),
+(33, '2024-11-20 09:47:51', 1, 34),
+(34, '2024-11-20 09:48:53', 1, 35);
 
 -- --------------------------------------------------------
 
@@ -100,7 +106,13 @@ INSERT INTO `carritos_x_productos` (`Carritos_idCarrito`, `Productos_idProductos
 (27, 4, 3, 300.00, NULL, 52),
 (28, 9, 2, 7000.00, NULL, 53),
 (28, 7, 2, 3000.00, NULL, 54),
-(28, 9, 2, 7000.00, 'dggfd', 55);
+(28, 9, 2, 7000.00, 'dggfd', 55),
+(29, 7, 2, 3000.00, NULL, 56),
+(30, 7, 2, 3000.00, NULL, 57),
+(31, 9, 1, 3500.00, NULL, 58),
+(32, 9, 3, 10500.00, NULL, 59),
+(33, 7, 2, 3000.00, NULL, 60),
+(34, 9, 2, 7000.00, NULL, 61);
 
 -- --------------------------------------------------------
 
@@ -270,7 +282,13 @@ INSERT INTO `reservas` (`idReservas`, `fecha_entrega`, `forma_de_pago`, `Estados
 (26, '2024-11-29 07:00:00', 'MP', 1),
 (27, '2024-11-30 08:00:00', 'MP', 1),
 (28, '2024-11-30 08:00:00', 'MP', 1),
-(29, '2024-11-23 07:00:00', 'Transferencia', 1);
+(29, '2024-11-23 07:00:00', 'Transferencia', 1),
+(30, '2024-11-23 08:00:00', 'MP', 1),
+(31, '2024-11-23 07:00:00', 'MP', 1),
+(32, '2024-11-23 08:00:00', 'MP', 1),
+(33, '2024-11-23 08:00:00', 'MP', 1),
+(34, '2024-11-29 07:00:00', 'MP', 1),
+(35, '2024-11-29 08:00:00', 'MP', 1);
 
 --
 -- Índices para tablas volcadas
@@ -339,13 +357,13 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de la tabla `carritos`
 --
 ALTER TABLE `carritos`
-  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `carritos_x_productos`
 --
 ALTER TABLE `carritos_x_productos`
-  MODIFY `idPrdutosCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `idPrdutosCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -381,7 +399,7 @@ ALTER TABLE `productosbase`
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `idReservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idReservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas
