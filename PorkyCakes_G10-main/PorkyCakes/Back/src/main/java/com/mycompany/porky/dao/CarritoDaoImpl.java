@@ -14,10 +14,9 @@ public class CarritoDaoImpl implements CarritoDao {
 
     @Override
     public void add(Carrito carrito) {
-        String insertSQL = "INSERT INTO Carritos (estado, Fecha_creacion, Clientes_idCliente) VALUES (:estado, :fecha_creacion, :idCliente)";
+        String insertSQL = "INSERT INTO Carritos (Fecha_creacion, Clientes_idCliente) VALUES (:fecha_creacion, :idCliente)";
         try (Connection con = sql2o.open()) {
             con.createQuery(insertSQL)
-                    .addParameter("estado", carrito.getEstado())
                     .addParameter("fecha_creacion", new java.sql.Date(carrito.getFecha_creacion().getTime())) // Convierte
                                                                                                               // a Date
                                                                                                               // SQL
@@ -43,7 +42,7 @@ public class CarritoDaoImpl implements CarritoDao {
 
     @Override
     public Carrito buscarCarrito(int id_cliente) {
-        String selectSQL = "SELECT idCarrito, Estado, DATE(Fecha_creacion) as Fecha_creacion, Clientes_idCliente " +
+        String selectSQL = "SELECT idCarrito, DATE(Fecha_creacion) as Fecha_creacion, Clientes_idCliente " +
                            "FROM carritos WHERE Clientes_idCliente = :id_cliente AND Reserva_idReservas IS NULL";
         try (Connection con = sql2o.open()) {
             return con.createQuery(selectSQL)
