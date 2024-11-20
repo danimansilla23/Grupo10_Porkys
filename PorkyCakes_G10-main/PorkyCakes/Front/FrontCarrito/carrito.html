@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <!-- Mueve el botón de "Mi carrito" fuera del colapsable -->
-            <a href="#" class="btn btn-outline-pink cart-link">
+            <a class="btn btn-outline-pink cart-link">
                 <img src="carritoicono.png" alt="Carrito de compras" style="height: 30px;">
                 <span id="cart-count" class="badge bg-danger"
                     style="position: absolute; top: -5px; right: 35px; display: none;">1</span>
@@ -56,31 +56,31 @@
     <main class="container mt-5">
         <section class="carrito-section rounded p-4 bg-white shadow-sm">
             <!-- Enlace para volver atrás -->
-            <a href="#" class="back-link">
+            <a href="../FrontAgregarAlCarrito/index.html" class="back-link">
                 <span class="cart-title">&larr; Mi carrito</span>
             </a>
-    
+
             <!-- Aquí el script generará los productos del carrito -->
-            
+
             <div class="products-section">
                 <!-- Los productos del carrito se insertarán aquí -->
             </div>
-    
+
             <!-- Sección para el total del carrito -->
             <div class="total-section d-flex justify-content-between p-3 border-top mt-3">
                 <h5>Total:</h5>
                 <h5 id="total-amount">$0.00</h5> <!-- Se actualizará el total aquí -->
             </div>
-    
-            <!-- Botón de confirmación de pedido -->
-            <a href="../FrontRealizarReserva/index.html" class="btn btn-pink w-100 mt-3" id="btn-reserva">
+
+            <!-- Cambiamos el enlace <a> por un botón -->
+            <button class="btn btn-pink w-100 mt-3" id="btn-reserva" disabled>
                 Realizar Reserva
-            </a>
-            
+            </button>
+
         </section>
     </main>
-    
-    
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
