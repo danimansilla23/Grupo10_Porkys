@@ -65,7 +65,6 @@ public class CarritoController {
 
             Map<String, Object> responseData = new HashMap<>();
             responseData.put("idCarrito", carrito.getIdCarrito());
-            responseData.put("estado", carrito.getEstado());
             responseData.put("productos", productos);
             responseData.put("total", total);
 
