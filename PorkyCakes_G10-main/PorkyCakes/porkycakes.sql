@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2024 a las 13:39:51
+-- Tiempo de generación: 20-11-2024 a las 12:57:37
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `carritos` (
   `idCarrito` int(11) NOT NULL,
-  `Estado` varchar(45) NOT NULL,
   `Fecha_creacion` datetime NOT NULL,
   `Clientes_idCliente` int(11) DEFAULT NULL,
   `Reserva_idReservas` int(11) DEFAULT NULL
@@ -39,14 +38,27 @@ CREATE TABLE `carritos` (
 -- Volcado de datos para la tabla `carritos`
 --
 
-INSERT INTO `carritos` (`idCarrito`, `Estado`, `Fecha_creacion`, `Clientes_idCliente`, `Reserva_idReservas`) VALUES
-(2, '0', '2024-10-15 15:00:00', 2, 2),
-(3, '0', '2024-10-21 09:00:00', 3, 1),
-(8, '0', '2024-10-22 09:11:08', 2, 3),
-(9, '1', '2024-10-22 09:46:30', 4, 14),
-(11, '1', '2024-10-22 11:19:59', 1, 12),
-(12, '1', '2024-11-18 13:54:15', 1, 13),
-(13, '1', '2024-11-19 09:02:22', 1, 15);
+INSERT INTO `carritos` (`idCarrito`, `Fecha_creacion`, `Clientes_idCliente`, `Reserva_idReservas`) VALUES
+(2, '2024-10-15 15:00:00', 2, 2),
+(3, '2024-10-21 09:00:00', 3, 1),
+(8, '2024-10-22 09:11:08', 2, 3),
+(9, '2024-10-22 09:46:30', 4, 14),
+(11, '2024-10-22 11:19:59', 1, 12),
+(12, '2024-11-18 13:54:15', 1, 13),
+(13, '2024-11-19 09:02:22', 1, 15),
+(15, '2024-11-19 12:58:47', 1, 17),
+(16, '2024-11-19 13:04:14', 1, 18),
+(18, '2024-11-19 13:21:32', 1, 20),
+(19, '2024-11-19 13:52:39', 1, 21),
+(20, '2024-11-19 14:03:34', 1, 22),
+(21, '2024-11-19 14:05:56', 1, 23),
+(22, '2024-11-19 14:15:44', 1, 24),
+(23, '2024-11-19 14:46:02', 1, 25),
+(24, '2024-11-19 14:58:01', 1, 26),
+(25, '2024-11-19 15:17:07', 1, 27),
+(26, '2024-11-19 15:21:56', 1, 28),
+(27, '2024-11-20 08:41:04', 4, NULL),
+(28, '2024-11-20 08:41:18', 1, 29);
 
 -- --------------------------------------------------------
 
@@ -58,7 +70,6 @@ CREATE TABLE `carritos_x_productos` (
   `Carritos_idCarrito` int(11) NOT NULL,
   `Productos_idProductos` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `tamaño` varchar(45) DEFAULT NULL,
   `precio` decimal(10,2) DEFAULT NULL,
   `observacion` mediumtext DEFAULT NULL,
   `idPrdutosCarrito` int(11) NOT NULL
@@ -68,19 +79,28 @@ CREATE TABLE `carritos_x_productos` (
 -- Volcado de datos para la tabla `carritos_x_productos`
 --
 
-INSERT INTO `carritos_x_productos` (`Carritos_idCarrito`, `Productos_idProductos`, `cantidad`, `tamaño`, `precio`, `observacion`, `idPrdutosCarrito`) VALUES
-(2, 2, 1, 'Pequeño', 15.00, 'Con extra frutillas', 6),
-(3, 4, 3, 'Grande', 45.00, 'Sin gluten', 7),
-(8, 2, 1, NULL, 1000.00, NULL, 8),
-(9, 4, 3, NULL, 300.00, NULL, 10),
-(9, 9, 1, NULL, 3500.00, NULL, 11),
-(11, 9, 2, NULL, 7000.00, 'Mucho dulce de leche', 21),
-(11, 8, 1, NULL, 1000.00, 'Sin merengue!!', 22),
-(11, 7, 1, NULL, 1500.00, NULL, 23),
-(11, 7, 3, NULL, 4500.00, 'super', 31),
-(9, 4, 3, NULL, 300.00, NULL, 32),
-(12, 4, 3, NULL, 300.00, NULL, 33),
-(13, 4, 3, NULL, 300.00, NULL, 34);
+INSERT INTO `carritos_x_productos` (`Carritos_idCarrito`, `Productos_idProductos`, `cantidad`, `precio`, `observacion`, `idPrdutosCarrito`) VALUES
+(2, 2, 1, 15.00, 'Con extra frutillas', 6),
+(3, 4, 3, 45.00, 'Sin gluten', 7),
+(8, 2, 1, 1000.00, NULL, 8),
+(9, 4, 3, 300.00, NULL, 10),
+(9, 9, 1, 3500.00, NULL, 11),
+(11, 9, 2, 7000.00, 'Mucho dulce de leche', 21),
+(11, 8, 1, 1000.00, 'Sin merengue!!', 22),
+(11, 7, 1, 1500.00, NULL, 23),
+(11, 7, 3, 4500.00, 'super', 31),
+(9, 4, 3, 300.00, NULL, 32),
+(12, 4, 3, 300.00, NULL, 33),
+(13, 4, 3, 300.00, NULL, 34),
+(23, 7, 2, 7000.00, 'gosdgdssgd', 47),
+(24, 8, 1, 1500.00, NULL, 48),
+(24, 8, 2, 3000.00, NULL, 49),
+(25, 7, 2, 3000.00, 'lkl', 50),
+(26, 9, 2, 7000.00, NULL, 51),
+(27, 4, 3, 300.00, NULL, 52),
+(28, 9, 2, 7000.00, NULL, 53),
+(28, 7, 2, 3000.00, NULL, 54),
+(28, 9, 2, 7000.00, 'dggfd', 55);
 
 -- --------------------------------------------------------
 
@@ -236,7 +256,21 @@ INSERT INTO `reservas` (`idReservas`, `fecha_entrega`, `forma_de_pago`, `Estados
 (12, '2024-11-18 15:30:00', 'MP', 1),
 (13, '2024-12-01 15:30:00', 'Transferencia', 1),
 (14, '2024-11-18 15:30:00', 'MP', 1),
-(15, '2024-11-18 15:30:00', 'Transferencia', 1);
+(15, '2024-11-18 15:30:00', 'Transferencia', 1),
+(16, '2024-11-18 15:30:00', 'MP', 1),
+(17, '2024-11-18 15:30:00', 'MP', 1),
+(18, '2024-11-23 11:00:00', 'MP', 1),
+(19, '2024-11-18 15:30:00', 'MP', 1),
+(20, '2024-11-18 15:30:00', 'MP', 1),
+(21, '2024-11-22 07:00:00', 'MP', 1),
+(22, '2024-11-22 08:00:00', 'MP', 1),
+(23, '2024-11-23 07:00:00', 'MP', 1),
+(24, '2024-11-23 07:00:00', 'MP', 1),
+(25, '2024-11-23 07:00:00', 'MP', 1),
+(26, '2024-11-29 07:00:00', 'MP', 1),
+(27, '2024-11-30 08:00:00', 'MP', 1),
+(28, '2024-11-30 08:00:00', 'MP', 1),
+(29, '2024-11-23 07:00:00', 'Transferencia', 1);
 
 --
 -- Índices para tablas volcadas
@@ -305,13 +339,13 @@ ALTER TABLE `reservas`
 -- AUTO_INCREMENT de la tabla `carritos`
 --
 ALTER TABLE `carritos`
-  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `carritos_x_productos`
 --
 ALTER TABLE `carritos_x_productos`
-  MODIFY `idPrdutosCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idPrdutosCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
@@ -347,7 +381,7 @@ ALTER TABLE `productosbase`
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `idReservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idReservas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Restricciones para tablas volcadas
